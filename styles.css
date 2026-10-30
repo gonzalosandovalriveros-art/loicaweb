@@ -1,0 +1,195 @@
+:root{
+  --negro:#2A2A28; --gris-claro:#F4F4F4; --gris:#C8C8C8; --amarillo:#FFB200; --rojo:#C73B36; --blanco:#FFFFFF;
+  --texto:#2A2A28; --texto-suave:#555553;
+  --max:1120px; --pad:clamp(20px,5vw,48px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--texto);background:var(--blanco);font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amarillo);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+section{padding:clamp(64px,10vw,120px) 0}
+h1,h2,h3{font-weight:700;line-height:1.08;letter-spacing:-0.02em}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);max-width:18ch}
+p{max-width:62ch}
+
+/* Botón */
+.btn{display:inline-block;background:var(--amarillo);color:var(--negro);font-weight:700;font-size:1.05rem;text-decoration:none;padding:16px 28px;border-radius:4px;transition:transform .15s ease,background .15s ease}
+.btn:hover{background:#ffc233;transform:translateY(-2px)}
+.btn--sm{padding:10px 18px;font-size:.95rem}
+
+/* Header */
+header{background:var(--negro);position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(255,255,255,.08)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px}
+.marca{color:var(--blanco);text-decoration:none;font-size:1.25rem;font-weight:700;letter-spacing:-0.01em}
+.marca span{font-weight:300;color:var(--gris);margin-left:.35em}
+.marca i{display:inline-block;width:.38em;height:.38em;background:var(--rojo);border-radius:50%;margin-left:.2em;vertical-align:.1em}
+
+/* Hero */
+.hero{background:var(--negro);color:var(--blanco);padding:clamp(56px,9vw,112px) 0}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,6vw,80px);align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.4rem);font-weight:800;max-width:14ch}
+.hero p.baj{margin-top:28px;font-size:clamp(1.1rem,1.6vw,1.3rem);font-weight:300;color:#e6e6e4}
+.hero .micro{margin-top:14px;font-size:.95rem;color:var(--gris)}
+.hero .btn{margin-top:36px}
+.foto{position:relative;aspect-ratio:4/5;background:#3a3a37}
+.foto::before{content:"";position:absolute;inset:auto -16px -16px auto;width:78%;height:78%;background:var(--amarillo);z-index:0}
+.foto-in{position:absolute;inset:0;z-index:1;background:#3a3a37;overflow:hidden}
+.foto-in img{width:100%;height:100%;object-fit:cover;object-position:top}
+
+
+/* Problema */
+.dos{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,88px)}
+.lista{list-style:none}
+.lista li{padding:20px 0;border-top:1px solid var(--gris)}
+.lista li:last-child{border-bottom:1px solid var(--gris)}
+.cierre{margin-top:28px;font-weight:600}
+
+/* Servicios */
+.gris{background:var(--gris-claro)}
+.serv{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(32px,5vw,64px) clamp(32px,6vw,88px);margin-top:56px}
+.serv article{border-top:4px solid var(--negro);padding-top:22px}
+.serv article:first-child{border-top-color:var(--amarillo)}
+.serv h3{font-size:1.5rem;margin-bottom:10px}
+.serv p{color:var(--texto-suave)}
+
+/* Sectores */
+.sect p+p{margin-top:18px}
+.sect .sectores{margin:28px 0;font-size:clamp(1.3rem,2.4vw,1.8rem);font-weight:600;max-width:30ch;line-height:1.3}
+
+/* Proceso */
+.pasos{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:56px;counter-reset:p}
+.pasos li{counter-increment:p;border-top:4px solid var(--negro);padding-top:18px}
+.pasos li::before{content:counter(p);display:block;font-weight:800;font-size:2rem;color:var(--amarillo);-webkit-text-stroke:0;line-height:1;margin-bottom:10px;background:var(--negro);width:44px;height:44px;text-align:center;line-height:44px;font-size:1.2rem;border-radius:50%}
+.pasos strong{display:block;font-size:1.15rem;margin-bottom:6px}
+.pasos span{font-size:1rem;color:var(--texto-suave);display:block}
+
+/* Experiencia */
+.exp{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(32px,6vw,88px);margin-top:48px}
+.exp div{padding:22px 0;border-top:1px solid var(--gris)}
+.exp h3{font-size:1.25rem;margin-bottom:6px}
+.exp p{color:var(--texto-suave);font-size:1rem}
+
+/* Por qué */
+.porque{display:grid;grid-template-columns:repeat(2,1fr);gap:28px clamp(32px,6vw,88px);margin-top:48px;list-style:none}
+.porque li{padding-left:22px;position:relative}
+.porque li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:10px;background:var(--amarillo)}
+.porque strong{display:block;font-size:1.2rem}
+.porque span{color:var(--texto-suave);font-size:1rem}
+
+/* Sobre mí */
+.sobre .wrap{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(32px,6vw,88px);align-items:start}
+.sobre .foto{aspect-ratio:1/1;max-width:340px}
+.sobre p+p{margin-top:16px}
+.sobre h2{margin-bottom:24px;max-width:22ch}
+
+/* Cierre */
+.final{background:var(--negro);color:var(--blanco);text-align:left}
+.final h2{max-width:20ch}
+.final p{margin-top:20px;color:#e6e6e4;font-weight:300}
+.final .btn{margin-top:32px}
+.final .alt{margin-top:20px;font-size:1rem;color:var(--gris)}
+.final .alt a{color:var(--blanco)}
+
+footer{background:var(--negro);color:var(--gris);border-top:1px solid rgba(255,255,255,.1);padding:36px 0;font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:space-between}
+footer strong{color:var(--blanco);font-weight:700}
+footer a{color:var(--gris)}
+
+@media (max-width:860px){
+  .hero .wrap,.dos,.sobre .wrap{grid-template-columns:1fr}
+  .foto{max-width:360px}
+  .serv,.exp,.porque{grid-template-columns:1fr}
+  .pasos{grid-template-columns:1fr;gap:28px}
+  .pasos li{display:grid;grid-template-columns:44px 1fr;column-gap:16px;border-top:0;padding-top:0}
+  .pasos li::before{grid-row:1/3}
+  h2{max-width:none}
+}
+
+
+/* ================= ANIMACIONES =================
+   Todo se activa solo si el visitante no pidió reducir el movimiento
+   (la clase "js" la agrega un script al inicio de index.html). */
+
+/* Botones: flecha que avanza al pasar el cursor */
+.btn:not(.btn--sm)::after{content:"\2192";content:"\2192" / "";display:inline-block;margin-left:.55em;transition:transform .25s ease}
+.btn:not(.btn--sm):hover::after{transform:translateX(5px)}
+.btn.pulse{animation:ring 2.6s ease-out infinite}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(255,178,0,.55)}70%,100%{box-shadow:0 0 0 20px rgba(255,178,0,0)}}
+
+/* Encabezado: barra de progreso y sombra al hacer scroll */
+.progress{position:absolute;left:0;bottom:-1px;height:3px;width:100%;background:var(--amarillo);transform-origin:left;transform:scaleX(0)}
+header{transition:box-shadow .3s ease}
+header.scrolled{box-shadow:0 8px 28px rgba(0,0,0,.28)}
+.bar{transition:height .3s ease}
+header.scrolled .bar{height:58px}
+
+/* Hero: círculo orbital de fondo y movimiento con el scroll */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
+.hero-orb{position:absolute;right:-9%;top:-34%;width:640px;height:640px;border-radius:50%;border:1px solid rgba(255,178,0,.2);pointer-events:none;translate:0 var(--oy,0px)}
+.hero-orb::after{content:"";position:absolute;inset:72px;border-radius:50%;border:1px solid rgba(255,255,255,.07)}
+.hero-orb::before{content:"";position:absolute;top:-6px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--amarillo)}
+.js .hero-orb{animation:orbit 70s linear infinite}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.hero .foto{translate:0 var(--py,0px)}
+.foto::before{transform-origin:bottom right}
+
+/* Hero: entrada orquestada */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em;margin-bottom:-.12em}
+.w>span{display:inline-block}
+.js:not(.go) .hero h1 .w>span{transform:translateY(105%)}
+.js.go .hero h1 .w>span{animation:wordrise .9s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i)*.07s + .1s)}
+.js:not(.go) .hero .baj,.js:not(.go) .hero .btn,.js:not(.go) .hero .micro,.js:not(.go) .hero .foto{opacity:0}
+.js:not(.go) .hero .foto::before{transform:scale(.001)}
+.js.go .hero .baj{animation:rise .9s cubic-bezier(.2,.7,.2,1) .55s backwards}
+.js.go .hero .btn{animation:rise .9s cubic-bezier(.2,.7,.2,1) .8s backwards}
+.js.go .hero .micro{animation:rise .9s cubic-bezier(.2,.7,.2,1) 1s backwards}
+.js.go .hero .foto{animation:rise 1s cubic-bezier(.2,.7,.2,1) .3s backwards}
+.js.go .hero .foto::before{animation:grow .9s cubic-bezier(.2,.7,.2,1) .8s backwards}
+@keyframes wordrise{from{transform:translateY(105%)}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}}
+@keyframes grow{from{transform:scale(.001)}}
+@keyframes pop{from{transform:scale(0)}}
+@keyframes popr{from{transform:scale(0) rotate(45deg)}}
+
+/* Títulos de sección: las palabras suben al entrar en pantalla */
+.js .split:not(.visible) .w>span{transform:translateY(105%)}
+.js .split.visible .w>span{animation:wordrise .9s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i)*.06s)}
+
+/* Aparición al hacer scroll */
+.js .reveal{opacity:0;transform:translateY(24px)}
+.js .reveal.visible{opacity:1;transform:none;transition:opacity .8s ease var(--d,0s),transform .8s cubic-bezier(.2,.7,.2,1) var(--d,0s),background-size 1s ease calc(var(--d,0s) + .2s)}
+.js .reveal.done{transition:transform .3s ease,opacity .3s ease,background-size .3s ease}
+
+/* Líneas que se dibujan */
+.js .serv article{border-top:0;padding-top:26px;background:linear-gradient(var(--negro),var(--negro)) top left/0 4px no-repeat}
+.js .serv article:first-child{background-image:linear-gradient(var(--amarillo),var(--amarillo))}
+.js .serv article.visible{background-size:100% 4px}
+.js .pasos li{border-top:0;padding-top:22px;background:linear-gradient(var(--negro),var(--negro)) top left/0 4px no-repeat}
+.js .pasos li.visible{background-size:100% 4px}
+.js .pasos li:not(.visible)::before{transform:scale(0)}
+.js .pasos li.visible::before{animation:pop .6s cubic-bezier(.3,1.6,.5,1) .35s backwards}
+.js .porque li:not(.visible)::before{transform:scale(0) rotate(45deg)}
+.js .porque li.visible::before{animation:popr .6s cubic-bezier(.3,1.6,.5,1) .3s backwards}
+.js .sobre .foto:not(.visible)::before{transform:scale(.001)}
+.js .sobre .foto.visible::before{animation:grow .9s cubic-bezier(.2,.7,.2,1) .4s backwards}
+
+/* Subrayado ámbar que se dibuja */
+.subraya{background:linear-gradient(var(--amarillo),var(--amarillo)) 0 94%/100% .16em no-repeat}
+.js .subraya{background-size:0 .16em}
+.js .cierre.visible .subraya{background-size:100% .16em;transition:background-size .9s ease .5s}
+
+/* Microinteracciones al pasar el cursor */
+.serv h3{background:linear-gradient(var(--amarillo),var(--amarillo)) 0 100%/0 3px no-repeat;transition:background-size .35s ease;display:inline}
+.serv article:hover h3{background-size:100% 3px}
+.js .serv article.visible:hover,.js .exp > div.visible:hover{transform:translateY(-4px)}
+.lista li{transition:padding-left .3s ease}
+.lista li:hover{padding-left:12px}
+
+@media (max-width:860px){
+  .hero-orb{width:380px;height:380px;right:-24%;top:-12%}
+  .js .pasos li{padding-top:0;background:none}
+}
